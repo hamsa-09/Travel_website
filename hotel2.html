@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Travel Website</title>
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #302b2b;
+        /* Add background image */
+        background-image: url('https://www.hdwallpapers.in/download/hotel_during_nighttime_hd_black_aesthetic-1920x1080.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+
+    header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #fff;
+    }
+
+    section {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .small-container {
+        margin-top: 30px;
+    }
+
+    .row2 {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        margin-left: 20px;
+        margin-right: 20px; /* Adjust margin-right to create space between images */
+    }
+    .col2{
+        margin-left: 5px;
+    }
+    .col2 img {
+    width: 250px;
+    height: 150px; /* Set a fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+    transition: transform 0.3s ease;
+    margin-left: 5px;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+
+
+    
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container .mainpicture img {
+    width: 800px;
+    height: 400px; /* Updated height to 400px */
+    border-radius: 20px; /* Adjust the border radius as needed */
+    margin-top: 30px;
+ 
+}
+
+
+.description {
+    width: 40%;
+    height: 355px; /* Updated height to 400px */
+    background-color: white; /* Set background color to white */
+    border-radius: 20px; /* Add rounded corners to the box */
+    box-shadow: 0 2px 4px rgba(238, 84, 7, 0.1); /* Add a subtle shadow */
+    padding: 20px; /* Add padding inside the box */
+    margin-top: 30px; /* Adjust margin as needed */
+    border-right: 50px;
+}
+
+.description h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.description p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin-top: 10px; /* Adjust margin as needed */
+}
+
+
+
+    .col2:hover img {
+        transform: scale(1.1); /* Scale up the image on hover */
+    }
+
+    .slideshow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 500px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        font-size: 24px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .col2:hover .slideshow {
+        opacity: 1;
+    }
+
+    .slideshow img {
+    width: 50px; /* Adjust the max-width as needed */
+    height: 50px; /* Adjust the max-height as needed */
+    object-fit: contain;
+}
+
+
+    .hotels {
+        text-align: center;
+    }
+
+    .hotels h2 {
+        font-size: 36px;
+        color: #3498db;
+        margin-bottom: 20px;
+    }
+ 
+    .col3 {
+        margin: 20px;
+        text-align: center;
+        color:white;
+    }
+
+    .stars {
+        color: orange;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 8px 30px;
+        margin: 25px 0;
+        background-color: white;
+        color: black;
+        border-radius: 30px;
+        border: 1px solid black;
+        text-decoration: none;
+    }
+
+    .btn:hover {
+        background: #ddd;
+    }
+   
+    /* New style for hotel boxes */
+    .hotel-box {
+        background-color: rgb(29, 24, 24);
+       
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        margin-top: 5px;
+        border-right: 50px;
+    }
+    .headings {
+        margin-left: 20px;
+    }
+    .hotel-name {
+    position: absolute;
+    top: 350px; /* Adjust the top position as needed */
+    left: 20px; /* Adjust the left position as needed */
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+}
+
+</style>
+<body>
+
+<div class="headings">
+
+</div>
+<div class="container">
+    <div class="mainpicture">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/22/50/57/ooty-fern-hill-a-sterling.jpg?w=1200&h=-1&s=1" id="productimg">
+        <div class="hotel-name">Sterling Ooty Elk Hill</div> <!-- Added line -->
+    </div>
+    
+
+  <div class="description">
+      <h2>Sterling Ooty Elk Hill</h2>
+      <p>Sterling Ooty Elk Hill offers a peaceful retreat set 2240 metres above sea level. Offering views of Ooty Valley, this resort features a restaurant, a variety of recreational facilities and free parking.
+
+        Apartments at Sterling Ooty Elk Hill come with elegant modern interiors and neutral colour tones. Each well-appointed apartment features a cable TV and private bathroom with a shower.</p>
+  </div>
+</div>
+
+
+
+<div class="row2">
+    <div class="col2">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/6d/e5/0b/sterling-ooty-fern-hill.jpg?w=1200&h=-1&s=1" width="100%" height="500px" class="small-img">
+    </div>
+    <div class="col2">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/bc/47/31/sterling-ooty-fern-hill.jpg?w=1200&h=-1&s=1" width="100%"  height="500px" class="small-img">
+    </div>
+   
+    <div class="col2">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/6d/ef/27/sterling-ooty-fern-hill.jpg?w=1100&h=-1&s=1" width="100%" height="500px"class="small-img">
+    </div>
+
+    <div class="col2">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/dc/34/21/sterling-ooty-fern-hill.jpg?w=1200&h=-1&s=1" width="100%" height="500px" class="small-img">
+    </div>
+
+    <div class="col2">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/dc/32/86/sterling-ooty-fern-hill.jpg?w=1200&h=-1&s=1" width="100%"  height="500px"class="small-img">
+    </div>
+    
+   
+  </div>
+  <section id="search" style="background-color: #f9f9f9; padding: 20px;">
+    <h2 style="text-align: center; color: #333; font-size: 36px; margin-bottom: 20px;">Book Your Rooms Here!</h2>
+    <form style="max-width: 600px; margin: 0 auto;">
+        <label for="checkin" style="display: block; margin-bottom: 10px; font-size: 18px; color: #555;">Check-In:</label>
+        <input type="date" id="checkin" name="check-in" style="padding: 8px; width: 100%; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 10px;">
+
+        <label for="checkout" style="display: block; margin-bottom: 10px; font-size: 18px; color: #555;">Check-Out:</label>
+        <input type="date" id="checkout" name="check-out" style="padding: 8px; width: 100%; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 10px;">
+
+        <label for="guests" style="display: block; margin-bottom: 10px; font-size: 18px; color: #555;">Rooms:</label>
+        <select id="guests" name="guests" style="padding: 8px; width: 100%; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 10px;">
+            <option value="1">1 Room</option>
+            <option value="2">2 Rooms</option>
+            <option value="3">3 Rooms</option>
+            <option value="4">4 Rooms</option>
+        </select>
+
+        <label for="phone" style="display: block; margin-bottom: 10px; font-size: 18px; color: #555;">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" style="padding: 8px; width: 100%; border-radius: 5px; border: 1px solid #ccc; margin-bottom: 10px;">
+
+        <button type="button" onclick="sendMail()" style="background-color: #333; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Book Now!</button>
+    </form>
+</section>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com/dist/email.min.js"></script>
+<script type="text/javascript">
+
+var productimg = document.getElementById("productimg");
+  var smallimg = document.getElementsByClassName("small-img");
+
+  smallimg[0].onclick = function () {
+      productimg.src = smallimg[0].src;
+  }
+  smallimg[1].onclick = function () {
+      productimg.src = smallimg[1].src;
+  }
+  smallimg[2].onclick = function () {
+      productimg.src = smallimg[2].src;
+  }
+  smallimg[3].onclick = function () {
+      productimg.src = smallimg[3].src;
+  }
+  smallimg[4].onclick = function () {
+      productimg.src = smallimg[4].src;
+  }
+const slideshowContainer = document.getElementById("slideshow-container");
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 3000);
+}
+          
+
+  var productimg = document.getElementById("productimg");
+  var smallimg = document.getElementsByClassName("small-img");
+
+
+
+  function sendMail() {
+    emailjs.init("rtwuL7_MkGHljRUpR");
+    var companyname = "BEST HOTEL";
+    var checkin = document.getElementById("checkin").value; // Get the value property
+    var checkout = document.getElementById("checkout").value;
+    var guests = document.getElementById("guests").value;
+    var phone = document.getElementById("phone").value;
+
+    var templateParams = {
+    from_name: companyname,
+    to_name: 'muhammedarsath18@gmail.com', // Change the target email address
+    message: 'I would like to book a room in your hotel.',
+    checkin: checkin,
+    checkout: checkout,
+    guests: guests,
+    phone: phone, // Add the phone number to the templateParams object
+    reply_to: '' // Add the sender's email here if required
+};
+
+    emailjs.send("service_hrwn0ad", "template_043bpzm", templateParams)
+        .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Your booking is confirmed!');
+            // You can clear the form fields or perform other actions if needed
+            document.getElementById("checkin").value = '';
+            document.getElementById("checkout").value = '';
+            document.getElementById("guests").value = '1';
+            document.getElementById("phone").value = '';
+        }, function (error) {
+            console.log('FAILED...', error);
+            alert('Error sending email. Please try again later.');
+        });
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>

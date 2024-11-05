@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles.css">
+    <title>Travel Website</title>
+</head>
+<body">
+
+<div class="container">
+  <div class="first">
+    <video class="mainvideo" playsinline autoplay muted loop>
+      <source src="natv.mp4" type="video/mp4">
+      
+    </video>
+    <div class="attractive">FEEL YOURSELF BY FEELING THE NATURE!</div>
+    <div class="navbar">
+      <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <input id="searchbar" onkeyup="searchVideos()" type="text" name="search" placeholder="Search Spots...">
+      </ul>
+    </div>
+  </div>
+  <div>
+    <h2>TOP PICK</h2>
+  </div>
+  <div class="small-container">
+<div class="row">
+      <div class="col">
+       <a href="Andhra.html"><img src="tn.jpg" width="400px" height="250px"></a>
+      
+        <h3>Tamil Nadu</h3>
+      </div>
+
+      <div class="col">
+        <img src="dl.jpg" width="400px" height="250px">
+      
+        <h3>Delhi</h3>
+      
+      </div>
+
+    
+
+      <div class="col">
+        <img src="jk.png" width="400px" height="250px">
+
+        <h3>Jammu And Kashmir</h3>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <img src="ka.webp" width="400px" height="250px">
+  
+        <h3>Karnataka</h3>
+      </div>
+
+      <div class="col">
+        <img  src="kl.cms"width="400px" height="250px">
+       
+        <h3>Kerala</h3>
+      </div>
+
+      <div class="col">
+        <img src="andhra.jpg" width="400px" height="250px">
+
+        <h3>Andhra Pradesh</h3>
+      </div>
+
+    
+    </div>
+     
+  </div>
+
+</div>
+<script src="script.js" type="text/javascript"></script>
+<!--Start of Conferbot Script-->
+<script type="text/javascript">
+  (function (d, s, id) {
+    var js,
+      el = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {
+      return;
+    }
+    js = d.createElement(s);
+    js.async = true;
+    js.src = 'https://s3.ap-south-1.amazonaws.com/conferbot.defaults/dist/v1/widget.min.js';
+    js.id = id;
+    js.charset = 'UTF-8';
+    el.parentNode.insertBefore(js, el);
+    // Initializes the widget when the script is ready
+    js.onload = function () {
+        var w = window.ConferbotWidget("655a11f1b3d7f38922ac90f1", "live_chat");
+    };
+  })(document, 'script', 'conferbot-js');
+</script>
+<!--End of Conferbot Script-->*
+<script>
+  
+   function searchVideos() {
+      // Get the search query
+      let searchQuery = document.getElementById('searchbar').value.toLowerCase();
+
+      // Get all the state elements
+      let stateElements = document.querySelectorAll('.col h3');
+
+      // Convert NodeList to an array
+      let stateArray = Array.from(stateElements);
+
+      // Filter the state elements based on the search query
+      let filteredStateElements = stateArray.filter(element => {
+        let stateName = element.textContent.toLowerCase();
+        return stateName.includes(searchQuery);
+      });
+
+      // Hide all the state elements
+      for (let element of stateArray) {
+        element.parentElement.style.display = 'none';
+      }
+
+      // Show only the filtered state elements
+      for (let element of filteredStateElements) {
+        element.parentElement.style.display = 'block';
+      }
+    }
+
+</script>
+</body>
+</html>

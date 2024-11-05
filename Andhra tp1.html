@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Travel Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color:#d2d2d2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .small-container {
+            margin-top: 30px;
+        }
+
+        .row2 {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            margin-left: 20px;
+            margin-right: 20px; /* Adjust margin-right to create space between images */
+        }
+        .col2{
+            margin-left: 5px;
+        }
+        .col2 img {
+        width: 250px;
+        height: 150px; /* Set a fixed height for all images */
+        object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+        transition: transform 0.3s ease;
+        margin-left: 5px;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+
+
+        
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .container .mainpicture img {
+        width: 800px;
+        height: 400px; /* Updated height to 400px */
+        border-radius: 20px; /* Adjust the border radius as needed */
+        margin-top: 30px;
+    
+    }
+
+
+    .description {
+        width: 40%;
+        height: 355px; /* Updated height to 400px */
+        background-color: white; /* Set background color to white */
+        border-radius: 20px; /* Add rounded corners to the box */
+        box-shadow: 0 2px 4px rgba(238, 84, 7, 0.1); /* Add a subtle shadow */
+        padding: 20px; /* Add padding inside the box */
+        margin-top: 30px; /* Adjust margin as needed */
+        border-right: 50px;
+    }
+
+    .description h2 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 10px; /* Adjust margin as needed */
+    }
+
+    .description p {
+        font-size: 16px;
+        color: #555;
+        line-height: 1.5;
+        margin-top: 10px; /* Adjust margin as needed */
+    }
+
+
+
+        .col2:hover img {
+            transform: scale(1.1); /* Scale up the image on hover */
+        }
+
+        .slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #fffdfd;
+            font-size: 24px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .col2:hover .slideshow {
+            opacity: 1;
+        }
+
+        .slideshow img {
+        width: 50px; /* Adjust the max-width as needed */
+        height: 50px; /* Adjust the max-height as needed */
+        object-fit: contain;
+    }
+
+
+        .hotels {
+            text-align: center;
+        }
+
+        .hotels h2 {
+            font-size: 36px;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+    
+        .col3 {
+    margin: 20px;
+    text-align: left; /* Align text to the left */
+    color: white;
+    padding-left: 10px; /* Add left padding */
+}
+
+
+        .stars {
+            color: orange;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 30px;
+            margin: 25px 0;
+            background-color: white;
+            color: black;
+            border-radius: 30px;
+            border: 1px solid black;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #ddd;
+        }
+    
+        /* New style for hotel boxes */
+        .hotel-box {
+            background-color: #c0c0c0;
+        
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-top: 5px;
+            border-right: 50px;
+        }
+        .headings {
+            margin-left: 20px;
+        }
+        h3{
+          color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="headings">
+
+</div>
+<div class="container">
+  <div class="mainpicture">
+      <img src="oot.jpg"  id="productimg">
+  </div>
+
+  <div class="description">
+      <h2 id="description-title">About Ooty</h2>
+      <p id="description-text">Ooty, also known as Udhagamandalam, is a popular hill station in the southern state of Tamil Nadu, India. It is located in the Nilgiri Hills and is known for its pleasant climate, scenic beauty, tea plantations, and colonial charm. Ooty is a favorite destination for nature lovers, adventure enthusiasts, and honeymooners.</p>
+  </div>
+</div>
+
+
+
+<div class="row2">
+    <div class="col2">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/ee/c5/d6/avalanche-lake.jpg?w=1200&h=-1&s=1" width="100%" height="500px" class="small-img">
+      <p>Avalanche Lake</p>
+    </div>
+    <div class="col2">
+        <img src="gr.jpg" width="100%"  height="500px" class="small-img">
+        <p>Doddabetta Peak</p>
+    </div>
+   
+    <div class="col2">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/04/8b/7f/40/emerald-lake.jpg?w=1100&h=-1&s=1" width="100%" height="500px"class="small-img">
+        <p>Emerald Lake</p>
+    </div>
+
+    <div class="col2">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/a3/0a/4e/beautiful-botanical-garden.jpg?w=1200&h=-1&s=1" width="100%" height="500px" class="small-img">
+        <p>Government Rose Garden</p>
+    </div>
+
+    <div class="col2">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/9b/41/39/fb-img-1536802621189.jpg?w=1200&h=-1&s=1" width="100%"  height="500px"class="small-img">
+        <p>Pykara Falls</p>
+    </div>
+
+    
+   
+  </div>
+
+<div class="headings" style=" font-family: 'Cinzel Decorative', sans-serif; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);font-size:40px;margin-top: 20px;"><b> Nearby Hotels</b></div>
+
+<!-- First Hotel Box -->
+<div class="hotel-box">
+    <div class="row2">
+        <div class="col3">
+            <img src="https://assets.cntraveller.in/photos/6470b5333de70554923b9137/16:9/w_1760,h_990,c_limit/accord.jpeg" width="350px" height="250px">
+        </div>
+        <div class="col3">
+            <h3>1.Club Mahindra Derby Green, Ooty </h3>
+            <h3>29 - 49 Baikey Road Off Ettines Road,<br> Near Ooty Race Course,<br> Ooty (Udhagamandalam) 643001 India</h3>
+            <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <a href="hotelpage.html" class="btn">Book Now! &#8594;</a>
+        </div>
+    </div>
+</div>
+
+<!-- Second Hotel Box -->
+<div class="hotel-box">
+    <div class="row2">
+        <div class="col3">
+            <img src="https://img.traveltriangle.com/blog/wp-content/uploads/2019/12/cover-image-of-Ooty-Hotels_5th-dec.jpg" width="350px" height="250px">
+        </div>
+        <div class="col3">
+            <h3>2.Sterling Ooty Elk Hill
+            </h3>
+            <h3>73 Kundah House Road Fern Hill,<br> Ooty (Udhagamandalam) 643004 India
+            </h3>
+            <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <a href="hotel2.html" class="btn">Book Now! &#8594;</a>
+        </div>
+    </div>
+</div>
+
+<!-- Third Hotel Box -->
+<div class="hotel-box">
+    <div class="row2">
+        <div class="col3">
+            <img src="https://static.toiimg.com/photo/51806919.cms" width="350px" height="250px">
+        </div>
+        <div class="col3">
+            <h3>3.Sinclairs Retreat Ooty </h3>
+            <h3>Gorishola Road,<br> Ooty (Udhagamandalam) 643001 India</h3>
+            <div class="stars">
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+            </div>
+            <a href="hotel3.html" class="btn">Book Now! &#8594;</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    var productimg = document.getElementById("productimg");
+    var smallimg = document.getElementsByClassName("small-img");
+    var descriptionTitle = document.getElementById("description-title");
+    var descriptionText = document.getElementById("description-text");
+
+    smallimg[0].onclick = function () {
+    productimg.src = smallimg[0].src;
+    descriptionTitle.innerText = "Avalanche Lake";
+    descriptionText.innerHTML = "Nestled amidst the Nilgiris, Avalanche Lake is a serene natural haven in Ooty, renowned for its lush landscapes and myriad adventure activities. Its pristine waters, surrounded by thick forests and blooming flowers, offer a picturesque retreat for nature enthusiasts and adventure seekers alike."
+      + "<br><br><b>Weather :</b> 11 - 26°C"
+      + "<br><b>Tags :</b> Lake"
+      + "<br><b>Timings :</b> 8:00 AM - 6:00 PM"
+      + "<br><b>Time Required :</b> 1-2 hrs"
+      + "<br><b>Entry Fee :</b> No entry fee";
+}
+
+
+smallimg[1].onclick = function () {
+    productimg.src = smallimg[1].src;
+    descriptionTitle.innerText = "Doddabetta Peak";
+    descriptionText.innerHTML = "Dodabetta, literally translating to mean - Big Peak, is located approximately 10 km away from Ooty. It towers to a staggering height of 8650 feet or 2,623 meters above the sea level and is the highest peak in the Nilgiri Hills. A treat to the eyes, this picturesque land is indeed a great sightseeing place."
+      + "<br><br><b>Weather :</b> 11 - 26°C"
+      + "<br><b>Tags :</b> Hills & Valleys"
+      + "<br><b>Timings :</b> 7:00 AM - 6:00 PM"
+      + "<br><b>Time Required :</b> 1 day"
+      + "<br><b>Entry Fee :</b>"
+      +"<br><b> Adults:</b> INR 6" 
+      +"<br><b>Children below 5 years:</b> Free,";
+}
+
+smallimg[2].onclick = function () {
+    productimg.src = smallimg[2].src;
+    descriptionTitle.innerText = "Emerald Lake";
+    descriptionText.innerHTML = "Emerald Lake is the ideal spot in Ooty for nature lovers. Tourists usually flock there for the picturesque scenic beauty of the lake, and the green Nilgiri slopes and tea plantations surrounding it. It is a paradise for nature photography enthusiasts as the delightful landscape offers a perfect subject and composition. "
+        + "<br><br><b>Weather :</b> 11 - 26°C"
+        + "<br><b>Tags :</b> Lake"
+        + "<br><b>Timings :</b> 7:00 AM - 6:00 PM"
+        + "<br><b>Time Required :</b>  1-2 hrs"
+        + "<br><b>Entry Fee :</b> No entry fee";
+}
+
+    smallimg[3].onclick = function () {
+    productimg.src = smallimg[3].src;
+    descriptionTitle.innerText = "Government Rose Garden";
+    descriptionText.innerHTML = "Ooty Botanical Gardens lie on the lower slopes of the Doddabetta peak, the Government Botanical Garden is a splendid garden in Udhagamandalam, near Coimbatore in the state of Tamil Nadu. Sprawled over an area of 22 hectares, the garden is divided into several sections that are trimmed beautifully to present an endearing sight. "
+        + "<br><br><b>Weather :</b> 11 - 26°C"
+        + "<br><b>Tags :</b> Garden & Park"
+        + "<br><b>Timings :</b>  7:30 AM - 6:30 PM"
+        + "<br><b>Time Required :</b> 1-2 hours"
+        + "<br><b>Entry Fee :</b>"
+        + "<br><b> Adults:</b> INR 6"
+        + "<br><b>Children below 5 years:</b> Free";
+}
+
+smallimg[4].onclick = function () {
+    productimg.src = smallimg[4].src;
+    descriptionTitle.innerText = "Pykara Falls";
+    descriptionText.innerHTML = "Pykara Falls are set amidst the backdrop of a lush green forest and are an absolute delight to witness. Pykara is the name of a village which lies at a distance of around 19 kms from Ooty, in the state of Tamil Nadu. It is also the name of a river which runs through the Pykara village, which is sacred to the natives of this land. The Pykara river flows downstream from the mountains, over a series of waterfalls, and these are known as the Pykara falls."
+        + "<br><br><b>Weather :</b> 11 - 26°C"
+        + "<br><b>Tags :</b>Waterfall"
+        + "<br><b>Timings :</b> 8:30 AM - 5:00 PM"
+        + "<br><b>Time Required :</b>  1-2 hrs"
+        + "<br><b>Entry Fee :</b> No entry fee";
+}
+
+
+
+</script>
+
+</body>
+</html>
+
